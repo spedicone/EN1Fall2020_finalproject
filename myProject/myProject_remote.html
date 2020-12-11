@@ -16,32 +16,10 @@
   <h1>My Project (Remote Interface)</h1>
 
 	<!-- CREATE YOUR PROJECT HERE -->
-	<div ng-app="test">
-	  <div ng-controller="SliderCtrl">
-	    <circular-slider class='my-slider' shape='{{shape}}' touch="true" animate='true' on-slide='onSlide' on-slide-end='onSlideEnd' min="0" max="360" value="value">
-	      {{value}}
-	    </circular-slider>
-	  </div>
-	</div>
-	<hr>
+	<input type="range" id="rangeInput" name="rangeInput" min="0" max="20" value="0"
+	       oninput="amount.value=rangeInput.value">
 
-	function SliderCtrl($scope) {
-  $scope.min = 10;
-  $scope.max = 100;
-  $scope.shape = 'Circle';
-  $scope.value = 20;
-
-  $scope.onSlide = function onSlide(value) {
-    console.log('on slide  ' + value);
-  }
-
-  $scope.onSlideEnd = function onSlideEnd(value) {
-    console.log('on slide end  ' + value);
-  }
-
-}
-
-angular.module('test', ['angular.circular-slider']).controller('SliderCtrl', SliderCtrl);
+	<output id="amount" name="amount" for="rangeInput">0</output>
 
 	<h2>My Project Quick Links:</h2>
   <p>
